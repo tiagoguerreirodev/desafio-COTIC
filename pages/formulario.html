@@ -53,7 +53,12 @@
 
 		<!-- Insira o formulário aqui. -->
 		<div class="opacity-50 container bg-light mt-5 rounded p-4">
-			<form action="../backend/api/registrar.php" method="POST">
+			<form
+				action="../backend/api/registrar.php"
+				name="form"
+				method="POST"
+				onsubmit="return(validate())"
+			>
 				<div class="form-group">
 					<label for="name">Nome do personagem:</label>
 					<input
@@ -101,6 +106,7 @@
 			</form>
 		</div>
 
+		<script src="../js/validation.js"></script>
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

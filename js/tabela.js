@@ -22,14 +22,12 @@ function getText(cell) {
 }
 console.log(document.URL);
 
-getJsonFromUrl("http://localhost/desafio/backend/api/personagens.php").then(
-	(res) => {
-		const classes = Object.keys(res[0]);
-		res.forEach((obj) => {
-			addElement(Object.values(obj), classes);
-		});
-	}
-);
+getJsonFromUrl("../backend/api/personagens.php").then((res) => {
+	const classes = Object.keys(res[0]);
+	res.forEach((obj) => {
+		addElement(Object.values(obj), classes);
+	});
+});
 
 document.addEventListener("DOMContentLoaded", (e) => {
 	const rows = document.getElementById("tabela").getElementsByTagName("tr");
@@ -40,3 +38,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
 		else row[0].style.color = "blue";
 	}
 });
+
+window.onload = function () {
+	if (!window.location.hash) {
+		window.location = window.location + "#loaded";
+		window.location.reload();
+	}
+};

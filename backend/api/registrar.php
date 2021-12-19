@@ -18,6 +18,6 @@ $novo_personagem->biografia = $biography;
 Personagem::inserir($novo_personagem);
 
 // retornar à página do formulário.
-$url = "http://localhost/desafio/pages/formulario.html";
+$url = "../../pages/formulario.html";
 header('Location: '. $url);
 ?>
